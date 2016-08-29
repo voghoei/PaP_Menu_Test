@@ -60,11 +60,38 @@
     <!-- User Unit -->
     <servlet>
         <servlet-name>UnitServlet</servlet-name>
-        <servlet-class>PaP.ui.UnitUI</servlet-class>
+        <servlet-class>PaP.ui.UnitCreateUI</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UnitServlet</servlet-name>
         <url-pattern>/unit</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UnitListServlet</servlet-name>
+        <servlet-class>PaP.ui.UnitListUI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UnitListServlet</servlet-name>
+        <url-pattern>/unitList</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UnitEditServlet</servlet-name>
+        <servlet-class>PaP.ui.UnitEditUI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UnitEditServlet</servlet-name>
+        <url-pattern>/unitEdit</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UnitDeleteServlet</servlet-name>
+        <servlet-class>PaP.ui.UnitDeleteUI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UnitDeleteServlet</servlet-name>
+        <url-pattern>/unitDelete</url-pattern>
     </servlet-mapping>
     
     

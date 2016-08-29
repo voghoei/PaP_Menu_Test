@@ -31,7 +31,7 @@ public class LoginUI extends HttpServlet {
         if(ctrl.checkIsLoggedIn(session))
         {
             // Already logged in, redirect.
-            response.sendRedirect("/");
+            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/") );
             return;
         }
 
@@ -50,6 +50,7 @@ public class LoginUI extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        String contextPath = request.getContextPath();
         // Get current session
         HttpSession session = request.getSession(true);
         request.setAttribute("baseContext", session.getServletContext().getContextPath());
@@ -57,7 +58,8 @@ public class LoginUI extends HttpServlet {
         if(ctrl.checkIsLoggedIn(session))
         {
             // Already logged in, redirect.
-            response.sendRedirect("/");
+            response.sendRedirect(response.encodeRedirectURL(contextPath + "/") );
+            
             return;
         }
 
@@ -65,7 +67,8 @@ public class LoginUI extends HttpServlet {
         String password = request.getParameter("password");
 
         if (ctrl.attemptLogin(username, password, session)) {
-            response.sendRedirect("/");
+//            response.sendRedirect("/");
+                response.sendRedirect(response.encodeRedirectURL(contextPath + "/unit") );
         } else {
             if(ctrl.hasError()) {
                 request.setAttribute("error", ctrl.getError());

@@ -8,22 +8,27 @@
                 ${error}
         </div>
 </#if>
+
 <div class="row">
-	<form role="form" action="register_unit" method="post">
-		<div classs="form-group">
-			<label for="name">Code</label>
-			<input type="text" class="form-control" placeholder="Code" name="code">
-		</div>
-                <div classs="form-group">
-                        <label for="name">Title</label>
-                        <input type="text" class="form-control" placeholder="" name="title">
-                </div>
-                <div classs="form-group">
-                        <label for="name">Description</label>
-                        <input type="text" class="form-control" placeholder="Description" name="description">
-                </div>
+	<form role="form" action="unit" method="post">
+                
                 <div class="form-group">
-		<button type="submit" class="btn btn-default">Submit</button>
+                        <label for="name">Code</label>                           
+                        <input type="text" class="form-control" placeholder="Code" name="code">
+                </div>                
+
+                <div class="form-group">
+                        <label for="name">Title</label>
+                            <input type="text" class="form-control" placeholder="title" name="title">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Description</label>       
+                            <input type="text" class="form-control" placeholder="Description" name="description">
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary pull-right">Submit</button><a href="${baseContext}/unitList">Cancel</a>
                 </div>
 
 	</form>
