@@ -97,7 +97,7 @@ public class Delete {
                 System.out.println("Failed to retrieve the Running Menu object");
             }
 
-            // Second: delete the Running Auction
+            // Second: delete the Running Unit
             if (runningUnit != null) {
                 objectModel.deleteUnit(runningUnit);
                 System.out.println("Deleted the Running Unit");
