@@ -57,6 +57,17 @@
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+    <!-- User Unit -->
+    <servlet>
+        <servlet-name>UnitServlet</servlet-name>
+        <servlet-class>PaP.ui.UnitUI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UnitServlet</servlet-name>
+        <url-pattern>/unit</url-pattern>
+    </servlet-mapping>
+    
+    
     <servlet>
         <servlet-name>freemarker</servlet-name>
         <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>

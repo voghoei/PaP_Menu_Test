@@ -50,7 +50,7 @@ public class IndexUI extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "Index UI";
+        return "IndexUI";
     }// </editor-fold>
 
 }
