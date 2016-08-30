@@ -36,6 +36,10 @@ public class PersistenceImpl
     public Iterator<Beer> restoreBeer(Beer beer) throws PaPException {
         return beerManager.restore(beer);
     }
+    
+    public Iterator<Beer> restoreBeerByUnitId(Long unitId) throws PaPException {
+        return beerManager.restoreByUnitId(unitId);
+    }
 
     public void deleteBeer(Beer beer) throws PaPException {
         beerManager.delete(beer);
@@ -76,6 +80,10 @@ public class PersistenceImpl
 
     public Iterator<Menu> restoreMenu(Menu menu) throws PaPException {
         return menuManager.restore(menu);
+    }
+    
+    public Iterator<Unit> restoreMenu() throws PaPException {
+        return unitManager.restoreGroupBy();
     }
 
     

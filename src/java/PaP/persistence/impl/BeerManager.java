@@ -191,7 +191,32 @@ public class BeerManager {
         throw new PaPException("BeerManager.restore: Could not restore persistent Beer object");
     }
     
-    
+    public Iterator<Beer> restoreByUnitId(Long unitId)
+            throws PaPException {
+        String selectBeerSql = "Select b.* from menu m inner join beer b where m.beer_id = b.id and m.unit_id = " + unitId;
+        Statement stmt = null;
+        StringBuffer query = new StringBuffer(100);
+
+        
+        query.append(selectBeerSql);
+
+        try {
+
+            stmt = conn.createStatement();
+
+            // retrieve the persistent Person object
+            //
+            if (stmt.execute(query.toString())) { // statement returned a result
+                ResultSet r = stmt.getResultSet();
+                return new BeerIterator(r, objectModel);
+            }
+        } catch (Exception e) {      // just in case...
+            e.printStackTrace();
+            throw new PaPException("BeerManager.restore: Could not restore persistent Beer object; Root cause: " + e);
+        }
+
+        throw new PaPException("BeerManager.restore: Could not restore persistent Beer object");
+    }
     public void delete(Beer beer) throws PaPException {
         // We only delete with IDs.
         String deleteBeerSql = "DELETE FROM Beer WHERE id = ?";

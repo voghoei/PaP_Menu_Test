@@ -132,6 +132,34 @@ public class BeerControl{
 		return true;
 	}
         
+        public ArrayList<Beer> getBeerByUnitId(long unitId) throws PaPException{
+            try{
+                    
+                this.connect();
+                Beer beer = null ;
+                
+                ArrayList<Beer> result = new ArrayList<Beer>();                               
+                
+                Iterator<Beer> beerIter = null;                                                
+                beerIter = objectModel.findBeerByUnitId(unitId);
+
+                while(beerIter.hasNext()) {
+                    beer = beerIter.next();  
+                    result.add(beer);
+                }
+                return result;
+            }
+            catch(PaPException e) {
+                this.hasError = true;
+                this.error = e.getMessage();
+                return null;
+            }
+            finally {
+                this.close();
+            }
+
+	}                
+        
         public void removeBeer(long beerId){
 		try{
 			this.connect();

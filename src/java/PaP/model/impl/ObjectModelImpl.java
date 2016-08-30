@@ -7,6 +7,7 @@ import PaP.model.ObjectModel;
 import PaP.persistence.Persistence;
 import PaP.model.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 
 
 public class ObjectModelImpl extends Persistent implements ObjectModel {
@@ -41,7 +42,11 @@ public class ObjectModelImpl extends Persistent implements ObjectModel {
     public Iterator<Beer> findBeer(Beer modelBeer) throws PaPException {
         return persistence.restoreBeer(modelBeer);
     }
-
+    
+    public Iterator<Beer> findBeerByUnitId(Long unitId) throws PaPException {
+        return persistence.restoreBeerByUnitId(unitId);
+    }
+    
     public void storeBeer(Beer beer) throws PaPException {
         persistence.saveBeer(beer);
     }
@@ -169,6 +174,11 @@ public class ObjectModelImpl extends Persistent implements ObjectModel {
         } else {
             throw new PaPException("No menu found with this Beer ID.");
         }
+    }
+    
+    public Iterator<Unit> getMenu() throws PaPException {
+        return persistence.restoreMenu();
+        
     }
 
     

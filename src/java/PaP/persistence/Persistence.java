@@ -14,6 +14,8 @@ public interface Persistence {
     public void saveBeer(Beer beer) throws PaPException;
 
     public Iterator<Beer> restoreBeer(Beer beer) throws PaPException;
+    
+    public Iterator<Beer> restoreBeerByUnitId(Long unitId) throws PaPException;
 
     public void deleteBeer(Beer beer) throws PaPException;
 
@@ -36,6 +38,8 @@ public interface Persistence {
     public void saveMenu(Menu menu) throws PaPException;
 
     public Iterator<Menu> restoreMenu(Menu menu) throws PaPException;
+    
+    public Iterator<Unit> restoreMenu() throws PaPException;
 
     public void deleteMenu(Menu menu) throws PaPException;
     

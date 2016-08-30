@@ -107,7 +107,7 @@ public class MenuSelectionUI extends HttpServlet{
                 if(ctrl.removeMeuByUnit(unitId)){
 
                     if (ctrl.addMenu(unitId, beerIds)){
-                        response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/beerList") );
+                        response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/menu") );
                     }else{
                    // request.setAttribute("error","Registration failed: "+ctrl.getError());
                         request.setAttribute("error","Cannot add menu");

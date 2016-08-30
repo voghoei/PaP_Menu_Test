@@ -23,6 +23,7 @@ public class UnitIterator implements Iterator<Unit> {
         this.objectModel = objectModel;
         try {
             more = rs.next();
+            System.out.println("&&");
         } catch (Exception e) {	// just in case...
             throw new PaPException("UnitIterator: Cannot create Unit iterator; root cause: " + e);
         }

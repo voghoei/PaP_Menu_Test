@@ -16,6 +16,7 @@ import PaP.persistence.impl.DbUtils;
 import PaP.persistence.impl.PersistenceImpl;
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -71,6 +72,27 @@ public class MenuControl {
                 close();
         }
         return true;
+    }
+    
+    public ArrayList<Unit> getMenuList(){
+            try{
+                    
+                    this.connect();
+			
+                    Iterator<Unit> units = this.objectModel.getMenu();
+                    ArrayList<Unit> unitsMap = new ArrayList<Unit>();
+
+                    while(units.hasNext()){				
+                            unitsMap.add(units.next());
+                    }		
+                    return unitsMap;
+            }catch(PaPException e){
+                    error = e.getMessage();
+                    hasError=true;
+                    return null;
+            }finally{
+                    this.close();
+            }
     }
 
     public boolean removeMeuByUnit(long unitId) throws PaPException{

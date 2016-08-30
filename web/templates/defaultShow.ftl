@@ -30,7 +30,7 @@
         <div class="container-fluid" id="main-container">
             <div class="row" id="main-row">
                 <header>
-                    <nav id="main-nav-bar" class="navbar navbar-default">
+                    <nav id="main-nav-bar" class="navbar-default">
                         <div class="container">
 
                             <div class="navbar-header">
@@ -40,38 +40,17 @@
                             </div>
                             <!-- navbar-header -->
 
-                            <div class="collapse navbar-collapse navbar-right" id="navigation">
-                                
-                                <ul id="main-nav" class="nav navbar-nav">
-                                    <#if loggedInUser??>
-                                    
-                                    <li><a href="${baseContext}/menu">Show</a></li>
-                                    <li><a href="${baseContext}/menuSelection">Menu</a></li>
-                                    <li><a href="${baseContext}/unitList">Unit</a></li>
-                                    <li><a href="${baseContext}/beerList">Beer</a></li>
+                            
 
-                                    <li class="dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">${loggedInUser.getFirstName()} <span class="fa fa-angle-down"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="${baseContext}/logout">Log Out</a></li>                                            
-                                        </ul>
-                                    </li>  
-                                    <#else>
-                                    <li><a href="${baseContext}/index">Home</a></li>
-                                    <li><a href="${baseContext}/login">Login</a></li>
-                                    </#if>
-                                </ul>                               
-							
-                            </div>
-                            <!-- /.navbar-collapse -->
-
-	                        <!-- /.container -->
+	                 <!-- /.container -->
                         </div>
                         <!-- /.container-fluid -->
                     </nav>
                 </header>
-                <div class="container-fluid bg-cover">
-                    <#nested/>
+                <div id="product-gallery">
+                    <div class="container">
+                        <#nested/>
+                    </div>
                 </div>
                 <!-- Abbas removed
                 <footer>
@@ -109,7 +88,7 @@
                     </div>
                 </footer>
                 -->
-                <footer class="credits">
+                <!--<footer class="credits">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-6">
@@ -123,7 +102,7 @@
                             </div>
                         </div>
                     </div>
-                </footer> 
+                </footer> -->
 		</div>
             <!-- /#main-row -->
         </div>

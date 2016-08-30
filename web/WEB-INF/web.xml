@@ -143,6 +143,15 @@
     </servlet-mapping>
     
     <servlet>
+        <servlet-name>MenuServlet</servlet-name>
+        <servlet-class>PaP.ui.MenuUI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MenuServlet</servlet-name>
+        <url-pattern>/menu</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>freemarker</servlet-name>
         <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
         <init-param>

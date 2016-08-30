@@ -99,6 +99,31 @@ public class UnitManager {
             throw new PaPException("UnitManager.save: failed to save a Unit: " + e);
         }
     }
+    
+    public Iterator<Unit> restoreGroupBy() throws PaPException {
+        String selectMenuSql = "select u.* from menu m inner join unit u where m.unit_id = u.id group by unit_id;";
+        Statement stmt = null;
+        StringBuffer query = new StringBuffer(100);
+        
+        query.append(selectMenuSql);
+        
+        try {
+            
+            stmt = conn.createStatement();
+            if (stmt.execute(query.toString())) {
+                ResultSet r = stmt.getResultSet();
+//                System.out.println(r.getRow());
+//                System.out.println(query.toString());
+                return new UnitIterator(r, objectModel);
+                
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new PaPException("MenuManager.restore: Could not restore persistent Menu object; Root cause: " + e);
+        }
+        throw new PaPException("MenuManager.restore: Could not restore persistent Menu object");
+
+    }
 
     public Iterator<Unit> restore(Unit unit)
             throws PaPException {

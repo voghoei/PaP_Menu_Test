@@ -2,6 +2,7 @@ package PaP.model;
 
 import PaP.PaPException;
 import PaP.persistence.Persistence;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public interface ObjectModel {
@@ -29,6 +30,8 @@ public interface ObjectModel {
     public Beer createBeer();
 
     public java.util.Iterator<Beer> findBeer(Beer modelBeer) throws PaPException;
+    
+    public Iterator<Beer> findBeerByUnitId(Long unitId) throws PaPException;
 
     public void storeBeer(Beer beer) throws PaPException;
 
@@ -53,6 +56,8 @@ public interface ObjectModel {
     public Menu getMenu(Unit unit) throws PaPException;
     
     public Menu getMenu(Beer beer) throws PaPException;
+    
+    public Iterator<Unit> getMenu() throws PaPException;
 
 
     //Registered User

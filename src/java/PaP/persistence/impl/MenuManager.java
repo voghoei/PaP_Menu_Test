@@ -126,6 +126,8 @@ public class MenuManager {
 
     }
 
+    
+    
     public void delete(Menu menu) throws PaPException {
         String deleteMenuSql = "delete from Menu where id = ?";
         PreparedStatement stmt = null;
