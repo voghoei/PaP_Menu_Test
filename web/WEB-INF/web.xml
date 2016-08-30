@@ -104,7 +104,7 @@
         <url-pattern>/unitDelete</url-pattern>
     </servlet-mapping>
     
-        <!-- Beer Unit -->
+        <!-- Beer Beer -->
     <servlet>
         <servlet-name>BeerServlet</servlet-name>
         <servlet-class>PaP.ui.BeerCreateUI</servlet-class>

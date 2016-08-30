@@ -169,6 +169,7 @@ public class BeerManager {
                     query.append(" where ");
                     query.append(condition);
                 }
+                System.out.println(query);
             }
         }
 

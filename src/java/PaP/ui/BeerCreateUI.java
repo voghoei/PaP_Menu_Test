@@ -40,18 +40,20 @@ public class BeerCreateUI extends HttpServlet{
 		String code = request.getParameter("code");
 		String name = request.getParameter("name");
                 String brand = request.getParameter("brand");
-                String style = request.getParameter("type");
-                String abv = request.getParameter("abv");
-                String ibu = request.getParameter("ibu");
+                String type = request.getParameter("type");
+                double abv = Double.parseDouble(request.getParameter("ABV"));
+                int ibu = Integer.parseInt(request.getParameter("IBU"));
 		String desc = request.getParameter("description");
                 
 		BeerControl ctrl = new BeerControl();		
 
             try {
-                if(ctrl.attemptToRegister(code, name, brand, style, 0, 0, desc)){
+                
+                if(ctrl.attemptToRegister(code, name, brand, type, abv, ibu, desc)){
                     response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/beerList") );
                 }else{
-                    request.setAttribute("error","Registration failed: "+ctrl.getError());
+                   // request.setAttribute("error","Registration failed: "+ctrl.getError());
+                   request.setAttribute("error","Registration failed: "+code+", "+name+", "+brand+", "+type+", "+abv+", "+ibu+", "+desc);
                     request.getRequestDispatcher("/beer.ftl").forward(request,response);
                 }
             } catch (PaPException ex) {

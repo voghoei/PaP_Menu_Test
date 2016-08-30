@@ -1,6 +1,6 @@
 <#import "default.ftl" as default>
 <@default.mainLayout "Register">
-<h1>Register for DawgTrades</h1>
+<h1>List of Beers</h1>
 <#if error??>
         <div class="col-md-12 alert alert-danger" role="alert">
                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -8,48 +8,48 @@
                 ${error}
         </div>
 </#if>
-<div class="row">
-	<form role="form" action="register" method="post">
-		<div classs="form-group">
-			<label for="name">Username</label>
-			<input type="text" class="form-control" placeholder="Username" name="username">
-		</div>
-                <div classs="form-group">
-                        <label for="name">First Name</label>
-                        <input type="text" class="form-control" placeholder="First Name" name="fname">
-                </div>
-                <div classs="form-group">
-                        <label for="name">Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name" name="lname">
-                </div>
-                <div classs="form-group">
-                        <label for="email">State</label>
-                        <input type="email" class="form-control" placeholder="State" name="estate">
-                </div>
-                <div classs="form-group">
-                        <label for="email">Address</label>
-                        <input type="email" class="form-control" placeholder="Address" name="address">
-                </div>
-		<div classs="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" placeholder="Email" name="email">
-                </div>
-                <div classs="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" class="form-control" placeholder="Phone Number" name="phone">
-                </div>
-                <div classs="form-group">
-                        <label for="password">Enter a password</label>
-                        <input type="password" class="form-control" placeholder="Password" name="password">
-                </div>
-                <div classs="form-group">
-                        <label for="passwordReEnter">Re-enter password</label>
-                        <input type="password" class="form-control" placeholder="Re-enter Password" name="passwordRe">
-                </div>
-                <div class="form-group">
-		<button type="submit" class="btn btn-default">Submit</button>
-                </div>
 
-	</form>
-</div>
+    <div class="row">
+
+            <table class="table table-striped table-hover">  <!-- table-bordered, table-hover table-condensed -->
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Style</th>
+                <th>ABV</th>
+                <th>IBU</th>
+
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            <#list beers as beer>
+                <tr>
+                    <td>${beer.id}</td>
+                    <td>${beer.code}</td>
+                    <td>${beer.name}</td>
+                    <td>${beer.brand}</td>
+                    <td>${beer.type}</td>
+                    <td>${beer.ABV}</td>
+                    <td>${beer.IBU}</td>
+
+                    <td>
+                        <a href="${baseContext}/beerEdit?id=${beer.id}" class="btn btn-success custom-width">edit</a>
+                    </td>
+                    <td>
+                        <a href="${baseContext}/beerDelete?id=${beer.id}" class="btn btn-danger custom-width">delete</a>
+                    </td>
+                </tr>
+            </#list>
+            </tbody>
+
+        </table>
+
+        <a href="${baseContext}/beer" class="btn btn-primary custom-width">New Beer</a>
+
+    </div>
 </@default.mainLayout>

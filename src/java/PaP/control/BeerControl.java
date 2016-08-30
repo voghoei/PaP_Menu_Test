@@ -59,16 +59,15 @@ public class BeerControl{
 	}
         
         public ArrayList<Beer> getBeerList(){
-		try{
+		try{            
 			this.connect();
 			Beer modelBeer = this.objectModel.createBeer();
                         Iterator<Beer> beers = this.objectModel.findBeer(modelBeer);
 			ArrayList<Beer> beersMap = new ArrayList<Beer>();
                         
-			while(beers.hasNext()){				
+			while(beers.hasNext()){                      
 				beersMap.add(beers.next());
 			}
-//			error = Integer.toString(categoriesMap.size());		
 			return beersMap;	
 		}catch(PaPException e){
 			error = e.getMessage();

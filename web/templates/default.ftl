@@ -38,8 +38,9 @@
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
                                 <#if loggedInUser??>
-                                    <li><a href="${baseContext}/unitList">Unit</a></li>
+                                    <li><a href="${baseContext}/unitList">UnitList</a></li>
                                     <li><a href="${baseContext}/beer">Beer</a></li>
+                                    <li><a href="${baseContext}/beerList">BeerList</a></li>
                                     <li><a href="${baseContext}/unit">Unit</a></li>
                                     <li><a href="${baseContext}/menu">Menu</a></li>
                                 <#else>

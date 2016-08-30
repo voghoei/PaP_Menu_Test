@@ -22,9 +22,14 @@
 	<form role="form" action="beer" method="post">
                 
                 <div class="form-group">
-                        <label for="name">Code</label>                           
+                        <label for="code">Code</label>                           
                         <input type="text" class="form-control" placeholder="Code" name="code">
-                </div>                
+                </div> 
+                
+                <div class="form-group">
+                        <label for="name">Name</label>                           
+                        <input type="text" class="form-control" placeholder="Name" name="name">
+                </div> 
 
                 <div class="form-group">
                         <label for="brand">Brand</label>
@@ -38,12 +43,12 @@
 
                 <div class="form-group">
                         <label for="abv">ABV</label>
-                            <input type="text" class="form-control" placeholder="abv" name="abv">
+                            <input type="text" class="form-control" placeholder="abv" name="ABV">
                 </div>
 
                 <div class="form-group">
                         <label for="ibu">IBU</label>
-                            <input type="text" class="form-control" placeholder="ibu" name="ibu">
+                            <input type="text" class="form-control" placeholder="ibu" name="IBU">
                 </div>
 
                 <div class="form-group">
