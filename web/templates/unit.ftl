@@ -28,12 +28,12 @@
                 </div>                
 
                 <div class="form-group">
-                        <label for="name">Title</label>
+                        <label for="title">Title</label>
                             <input type="text" class="form-control" placeholder="title" name="title">
                 </div>
 
                 <div class="form-group">
-                    <label for="name">Description</label>       
+                    <label for="description">Description</label>       
                             <input type="text" class="form-control" placeholder="Description" name="description">
                 </div>
 

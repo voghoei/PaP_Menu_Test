@@ -19,37 +19,40 @@
 </div>
 </#if>
 <div class="row">
-	<form role="form" action="register_beer" method="post">
-		<div classs="form-group">
-			<label for="name">Code</label>
-			<input type="text" class="form-control" placeholder="Code" name="code">
-		</div>
-                <div classs="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" placeholder="Name" name="name">
-                </div>
-                <div classs="form-group">
-                        <label for="name">Brand</label>
-                        <input type="text" class="form-control" placeholder="Brand" name="brand">
-                </div>
-                <div classs="form-group">
-                        <label for="email">Style</label>
-                        <input type="email" class="form-control" placeholder="Style" name="style">
-                </div>
-                <div classs="form-group">
-                        <label for="email">ABV</label>
-                        <input type="email" class="form-control" placeholder="ABV" name="abv">
-                </div>
-		<div classs="form-group">
-                        <label for="email">IBU</label>
-                        <input type="email" class="form-control" placeholder="IBU" name="ibu">
-                </div>
-                <div classs="form-group">
-                        <label for="phone">Description</label>
-                        <input type="tel" class="form-control" placeholder="Description" name="description">
-                </div>
+	<form role="form" action="beer" method="post">
+                
                 <div class="form-group">
-		<button type="submit" class="btn btn-default">Submit</button>
+                        <label for="name">Code</label>                           
+                        <input type="text" class="form-control" placeholder="Code" name="code">
+                </div>                
+
+                <div class="form-group">
+                        <label for="brand">Brand</label>
+                            <input type="text" class="form-control" placeholder="Brand" name="brand">
+                </div>
+
+                <div class="form-group">
+                        <label for="type">Style</label>
+                            <input type="text" class="form-control" placeholder="type" name="type">
+                </div>
+
+                <div class="form-group">
+                        <label for="abv">ABV</label>
+                            <input type="text" class="form-control" placeholder="abv" name="abv">
+                </div>
+
+                <div class="form-group">
+                        <label for="ibu">IBU</label>
+                            <input type="text" class="form-control" placeholder="ibu" name="ibu">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Description</label>       
+                            <input type="text" class="form-control" placeholder="Description" name="description">
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
 
 	</form>
