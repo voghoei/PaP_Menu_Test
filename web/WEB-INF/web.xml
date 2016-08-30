@@ -104,6 +104,42 @@
         <url-pattern>/unitDelete</url-pattern>
     </servlet-mapping>
     
+        <!-- Beer Unit -->
+    <servlet>
+        <servlet-name>BeerServlet</servlet-name>
+        <servlet-class>PaP.ui.BeerCreateUI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BeerServlet</servlet-name>
+        <url-pattern>/beer</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>BeerListServlet</servlet-name>
+        <servlet-class>PaP.ui.BeerListUI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BeerListServlet</servlet-name>
+        <url-pattern>/beerList</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>BeerEditServlet</servlet-name>
+        <servlet-class>PaP.ui.BeerEditUI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BeerEditServlet</servlet-name>
+        <url-pattern>/beerEdit</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>BeerDeleteServlet</servlet-name>
+        <servlet-class>PaP.ui.BeerDeleteUI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BeerDeleteServlet</servlet-name>
+        <url-pattern>/beerDelete</url-pattern>
+    </servlet-mapping>
     
     <servlet>
         <servlet-name>freemarker</servlet-name>

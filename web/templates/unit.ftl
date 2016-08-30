@@ -1,6 +1,5 @@
 <#import "default.ftl" as default>
 <@default.mainLayout "Login">
-<h1>Login to Plug and Pure</h1>
 <#if error??>
 <div class="row">
 	<div class="col-md-12 alert alert-danger" role="alert">
