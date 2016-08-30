@@ -39,4 +39,6 @@ public interface Persistence {
 
     public void deleteMenu(Menu menu) throws PaPException;
     
+    public void deleteMenuByUnit(Unit unit) throws PaPException;
+    
 };

@@ -47,6 +47,8 @@ public interface ObjectModel {
     public void storeMenu(Menu menu) throws PaPException;
 
     public void deleteMenu(Menu menu) throws PaPException;
+    
+    public void deleteMenuByUnit(Unit unit) throws PaPException;
 
     public Menu getMenu(Unit unit) throws PaPException;
     

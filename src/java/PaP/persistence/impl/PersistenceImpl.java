@@ -82,5 +82,9 @@ public class PersistenceImpl
     public void deleteMenu(Menu menu) throws PaPException {
         menuManager.delete(menu);
     }   
+    
+    public void deleteMenuByUnit(Unit unit) throws PaPException {
+        menuManager.deleteByUnit(unit);
+    } 
 
 }

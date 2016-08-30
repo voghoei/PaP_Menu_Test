@@ -9,6 +9,7 @@ import PaP.PaPException;
 import PaP.model.ObjectModel;
 import java.sql.*;
 import PaP.model.Menu;
+import PaP.model.Unit;
 
 public class MenuManager {
 
@@ -145,6 +146,28 @@ public class MenuManager {
         } catch (SQLException e) {
             e.printStackTrace();
             throw new PaPException("MenuManager.delete: failed to delete an menu " + e);
+        }
+    }
+    
+    public void deleteByUnit(Unit unit) throws PaPException {
+        String deleteMenuSql = "delete from Menu where unit_id = ?";
+        PreparedStatement stmt = null;
+        int inscnt;
+
+//        if (!menu.isPersistent()) {
+//            return;
+//        }
+        try {
+            stmt = (PreparedStatement) conn.prepareStatement(deleteMenuSql);
+            stmt.setLong(1, unit.getId());
+            inscnt = stmt.executeUpdate();
+            
+            
+            return;
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new PaPException("MenuManager.delete: failed to delete an menu by unit" + e);
         }
     }
 

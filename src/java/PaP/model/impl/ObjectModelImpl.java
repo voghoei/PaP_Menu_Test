@@ -145,6 +145,10 @@ public class ObjectModelImpl extends Persistent implements ObjectModel {
         persistence.deleteMenu(menu);
     }
     
+    public void deleteMenuByUnit(Unit unit) throws PaPException {
+        persistence.deleteMenuByUnit(unit);
+    }
+    
     public Menu getMenu(Beer beer) throws PaPException {
         Menu template = this.createMenu();
         template.setBeer(beer);

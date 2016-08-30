@@ -27,12 +27,12 @@ public class UnitCreateUI extends HttpServlet{
                     response.sendRedirect(session.getServletContext().getContextPath()+"/login");
                     request.setAttribute("loggedInUser","");
                     request.removeAttribute("loggedInUser");
-                    System.out.println("***Not Login");
+//                    System.out.println("***Not Login");
                     return;
             }else{
                     RegisteredUser currentUser = (RegisteredUser)session.getAttribute("currentSessionUser");
                     request.setAttribute("loggedInUser",currentUser);
-                    System.out.println("***Login");
+//                    System.out.println("***Login");
             }
 		request.getRequestDispatcher("/unit.ftl").forward(request,response);
 	}

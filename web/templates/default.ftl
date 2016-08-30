@@ -45,7 +45,7 @@
                                 <ul id="main-nav" class="nav navbar-nav">
                                     <#if loggedInUser??>
                                     
-                                    <li><a href="${baseContext}/menu">Menu</a></li>
+                                    <li><a href="${baseContext}/menuSelection">Menu</a></li>
                                     <li><a href="${baseContext}/unitList">Unit</a></li>
                                     <li><a href="${baseContext}/beerList">Beer</a></li>
 

@@ -134,6 +134,15 @@
     </servlet-mapping>
     
     <servlet>
+        <servlet-name>MenuSelectionServlet</servlet-name>
+        <servlet-class>PaP.ui.MenuSelectionUI</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MenuSelectionServlet</servlet-name>
+        <url-pattern>/menuSelection</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>freemarker</servlet-name>
         <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
         <init-param>
