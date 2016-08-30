@@ -1,4 +1,4 @@
-<#import "default.ftl" as default>
+f<#import "default.ftl" as default>
 <@default.mainLayout "PaP">
 
 <#if error??>

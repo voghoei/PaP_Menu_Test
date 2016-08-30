@@ -7,6 +7,10 @@
 		<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
 		Need to register? <a href="${baseContext}/register">Click here!</a>
 	</div>
+        <div class="panel panel-primary">
+  <div class="panel-heading"></div>
+  <div class="panel-body" style="max-height: 500;"></div>
+</div>
 </div>
 </#if>
 </@default.mainLayout>
