@@ -1,85 +1,152 @@
 <#macro mainLayout title="PaP Menu">
-	<!doctype html>
-	<html class="no-js" lang="">
-		<head>
-			<meta charset="utf-8">
-			<meta http-equiv="X-UA-Compatible" content="IE=edge">
-			<title>${title}</title>
-			<meta name="description" content="">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<!-- Bootstrap -->
-			<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-			<!-- Font-Awesome -->
-			<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-			<link rel="stylesheet" href="${baseContext}/resources/css/style.css">
-			
-			<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-			<!--[if lt IE 9]>
-				<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-				<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-			<![endif]-->
-			<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		</head>
-		<body>
-			<nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
-			  <div class="container-fluid">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			      <a class="navbar-brand" href="${baseContext}/">Plug and Pure</a>
-			    </div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- meta -->
+        <meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      <ul class="nav navbar-nav">
-                                <#if loggedInUser??>
-                                    <li><a href="${baseContext}/unitList">UnitList</a></li>
-                                    <li><a href="${baseContext}/beer">Beer</a></li>
-                                    <li><a href="${baseContext}/beerList">BeerList</a></li>
-                                    <li><a href="${baseContext}/unit">Unit</a></li>
+        <!-- css <link rel="stylesheet" href="${baseContext}/resources/css/style.css"> -->
+        
+        <link rel="stylesheet" href="${baseContext}/resources/css/bootstrap.css">
+        <link rel="stylesheet" href="${baseContext}/resources/css/font-awesome.css">
+        <link rel="stylesheet" href="${baseContext}/resources/css/animate.css">
+        <link rel="stylesheet" href="${baseContext}/resources/css/swipebox.css">
+        <link rel="stylesheet" href="${baseContext}/resources/css/swiper.min.css">
+        <link rel="stylesheet" href="${baseContext}/resources/css/chateau-theme.css">
+	<link rel="stylesheet" href="${baseContext}/resources/css/style.css">	               
+        
+        <!-- google fonts -->
+        <link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Merriweather:300,400,700,900,900italic,700italic,400italic,300italic" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+        
+	<!-- head js -->
+        <script src="${baseContext}/resources/js/modernizr-2.6.2.min.js"></script>                      
+    </head>
+    <body>
+    
+        <div class="container-fluid" id="main-container">
+            <div class="row" id="main-row">
+                <header>
+                    <nav id="main-nav-bar" class="navbar navbar-default">
+                        <div class="container">
+
+                            <div class="navbar-header">
+                                <a class="navbar-brand hidden-xs hidden-sm" href="${baseContext}/index"><img alt="" src="${baseContext}/resources/images/logo-1x.png" srcset="${baseContext}/resources/images/logo-1x.png 1x, ${baseContext}/resources/images/logo-2x.png 2x"></a>
+                                <a class="navbar-brand hidden-lg hidden-md" href="${baseContext}/index"><img alt="" src="${baseContext}/resources/images/logo-mobile-1x.png" srcset="${baseContext}/resources/images/logo-mobile-1x.png 1x, ${baseContext}/resources/images/logo-mobile-2x.png 2x"></a>
+                                <button class="navbar-toggle collapsed" data-target="#navigation" data-toggle="collapse" type="button"><span class="fa fa-navicon"></span></button>
+                            </div>
+                            <!-- navbar-header -->
+
+                            <div class="collapse navbar-collapse navbar-right" id="navigation">
+                                
+                                <ul id="main-nav" class="nav navbar-nav">
+                                    <#if loggedInUser??>
+                                    
                                     <li><a href="${baseContext}/menu">Menu</a></li>
-                                <#else>
-                                    <li><a href="${baseContext}/"></a></li>
-			        </#if>
-			      </ul>
+                                    <li><a href="${baseContext}/unitList">Unit</a></li>
+                                    <li><a href="${baseContext}/beerList">Beer</a></li>
 
-			      <ul class="nav navbar-nav navbar-right">
-			        <#if loggedInUser??>
-			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${loggedInUser.getFirstName()} <span class="caret"></span></a>
-			          <ul class="dropdown-menu" role="menu">
-			         
-			            <li class="divider"></li>
-			            <li><a href="${baseContext}/logout">Log Out</a></li>
-			          </ul>
-			        </li>
-			        <#else>
-			        <li><a href="${baseContext}/login">Login</a></li>
-			        </#if>
-			      </ul>
-			    </div><!-- /.navbar-collapse -->
-			  </div><!-- /.container-fluid -->
-			</nav>
-			<div class="container">
-				<#nested/>
-			</div>
-			
-			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-			<script>window.jQuery || document.write('<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"><\/script>')</script>
-			<!-- Include all compiled plugins (below), or include individual files as needed -->
-			<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-			
-		        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		        <script>
-		            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-		            ga('create','UA-XXXXX-X');ga('send','pageview');
-		        </script>
-		</body>
-	</html>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">${loggedInUser.getFirstName()} <span class="fa fa-angle-down"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="${baseContext}/logout">Log Out</a></li>                                            
+                                        </ul>
+                                    </li>  
+                                    <#else>
+                                    <li><a href="${baseContext}/index">Home</a></li>
+                                    <li><a href="${baseContext}/login">Login</a></li>
+                                    </#if>
+                                </ul>                               
+							
+                            </div>
+                            <!-- /.navbar-collapse -->
+
+	                        <!-- /.container -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </nav>
+                </header>
+                <div class="container-fluid bg-cover">
+                    <#nested/>
+                </div>
+                <!-- Abbas removed
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <ul class="list-group">                                                    
+                                    <li class="list-group-item style-1"><a href="${baseContext}/menu">Menu</a></li>
+                
+                                </ul>    	
+                            </div>
+                            <div class="col-sm-3">
+                                <ul class="list-group">                                                    
+                                    <li class="list-group-item style-1"><a href="${baseContext}/unitList">Unit</a></li>
+                
+                                </ul>    	
+                            </div>
+                            <div class="col-sm-3">
+                                <ul class="list-group">
+                                    <li class="list-group-item style-1"><a href="${baseContext}/unitBeer">Beer</a></li>
+                                </ul>    	
+                            </div>
+                            <div class="col-sm-3">
+                                <ul class="list-group">
+                                    <li class="list-group-item style-1"><a href="${baseContext}/logout">Log Out</a></li>                                    
+                                </ul>    	
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 col-sm-offset-4 pad-v text-center">
+                                <img alt="" src="${baseContext}/resources/images/logo-1x.png" class="img-responsive" srcset="${baseContext}/resources/images/logo-1x.png 1x, ${baseContext}/resources/images/logo-2x.png 2x">
+                            </div>
+                        </div>
+
+                    </div>
+                </footer>
+                -->
+                <footer class="credits">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                    Develop and design by <a href="http://www.pluginandpour.com/">Plug And Pour</a> / <a href="#">FMF CONSULTING, LLC</a>
+                            </div>
+                            <div class="col-sm-6 text-right social">
+                                    <a href="#"><span class="fa fa-facebook-square"></span></a>
+                                    <a href="#"><span class="fa fa-twitter-square"></span></a>
+                                    <a href="#"><span class="fa fa-google-plus-square"></span></a>
+                                    <a href="#"><span class="fa fa-pinterest-square"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </footer> 
+		</div>
+            <!-- /#main-row -->
+        </div>
+        <!-- /#main-container -->	
+	
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+        <script src="${baseContext}/resources/bootstrap/js/bootstrap.min.js"></script> 
+        <script src="${baseContext}/resources/js/jquery.swipebox.min.js"></script> 
+        <script src="${baseContext}/resources/js/jquery.stellar.js"></script> 
+        <script src="${baseContext}/resources/js/swiper.jquery.min.js"></script> 
+        <script src="${baseContext}/resources/js/jquery.waypoints.min.js"></script> 
+        <script src="${baseContext}/resources/js/sticky.js"></script> 
+        <script src="${baseContext}/resources/js/isotope.pkgd.min.js"></script> 
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script src="${baseContext}/resources/js/chateau-script.js"></script>         
+        <script type="text/javascript">
+        ;( function( $ ) {
+
+                $( '.swipebox' ).swipebox();
+
+        } )( jQuery );
+        </script>  
+        
+    </body>
+</html>
 </#macro>

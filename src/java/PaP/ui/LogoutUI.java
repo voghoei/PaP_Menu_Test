@@ -30,7 +30,7 @@ public class LogoutUI extends HttpServlet {
             session.removeAttribute("currentSessionUser");
         }
         // Already logged in, redirect.
-        response.sendRedirect(response.encodeRedirectURL(contextPath + "/") );
+        response.sendRedirect(response.encodeRedirectURL(contextPath + "/index") );
     }
 
     @Override

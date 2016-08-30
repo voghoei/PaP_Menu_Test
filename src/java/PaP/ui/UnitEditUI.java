@@ -35,10 +35,12 @@ public class UnitEditUI extends HttpServlet{
                     response.sendRedirect(session.getServletContext().getContextPath()+"/login");
                     request.setAttribute("loggedInUser","");
                     request.removeAttribute("loggedInUser");
+                    
                     return;
             }else{
                     RegisteredUser currentUser = (RegisteredUser)session.getAttribute("currentSessionUser");
                     request.setAttribute("loggedInUser",currentUser);
+                    
             }
         String strId = request.getParameter("id");
         long id = Long.parseLong(strId);

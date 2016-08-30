@@ -1,13 +1,19 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Aug 29, 2016, 11:00:35 PM
-    Author     : abbas
-*/
-
-div{
-    background-color: red;
+@font-face {
+  font-family: 'IDAHC39MCode39Barcode';
+  src: url('../fonts/IDAutomationHC39MCode39Barcode.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/IDAutomationHC39MCode39Barcode.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/IDAutomationHC39MCode39Barcode.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/IDAutomationHC39MCode39Barcode.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/IDAutomationHC39MCode39Barcode.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/IDAutomationHC39MCode39Barcode.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
 }
+  
+  
+ .barcodeSymbol {
+               font-family: 'IDAHC39MCode39Barcode';
+               font-size: 18px;
+               border: 1px solid #ddd;
+               display: inline-block;
+               padding: 10px;
+           }

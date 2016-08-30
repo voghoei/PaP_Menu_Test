@@ -31,7 +31,7 @@ public class LoginUI extends HttpServlet {
         if(ctrl.checkIsLoggedIn(session))
         {
             // Already logged in, redirect.
-            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/") );
+            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/index") );
             return;
         }
 
@@ -58,7 +58,7 @@ public class LoginUI extends HttpServlet {
         if(ctrl.checkIsLoggedIn(session))
         {
             // Already logged in, redirect.
-            response.sendRedirect(response.encodeRedirectURL(contextPath + "/") );
+            response.sendRedirect(response.encodeRedirectURL(contextPath + "/index") );
             
             return;
         }
@@ -68,7 +68,7 @@ public class LoginUI extends HttpServlet {
 
         if (ctrl.attemptLogin(username, password, session)) {
             //response.sendRedirect("/");
-               response.sendRedirect(response.encodeRedirectURL(contextPath + "/") );
+               response.sendRedirect(response.encodeRedirectURL(contextPath + "/index") );
         } else {
             if(ctrl.hasError()) {
                 request.setAttribute("error", ctrl.getError());

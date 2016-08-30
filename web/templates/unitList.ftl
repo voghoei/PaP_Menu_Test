@@ -1,5 +1,5 @@
 <#import "default.ftl" as default>
-<@default.mainLayout "Register">
+<@default.mainLayout "PaP">
 <h1>List of Units</h1>
 <#if error??>
         <div class="col-md-12 alert alert-danger" role="alert">
@@ -8,8 +8,9 @@
                 ${error}
         </div>
 </#if>
-
-    <div class="row">
+    <section id="register" class="">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
 
             <table class="table table-striped table-hover">  <!-- table-bordered, table-hover table-condensed -->
             <thead>
@@ -40,8 +41,9 @@
             </tbody>
 
         </table>
-
+        </div>
         <a href="${baseContext}/unit" class="btn btn-primary custom-width">New Unit</a>
 
     </div>
+    </section>
 </@default.mainLayout>

@@ -33,10 +33,12 @@ public class UnitListUI extends HttpServlet{
                     response.sendRedirect(session.getServletContext().getContextPath()+"/login");
                     request.setAttribute("loggedInUser","");
                     request.removeAttribute("loggedInUser");
+//                    System.out.println("***Not Login");
                     return;
             }else{
                     RegisteredUser currentUser = (RegisteredUser)session.getAttribute("currentSessionUser");
                     request.setAttribute("loggedInUser",currentUser);
+//                    System.out.println("***Login");
             }
             UnitControl unitCtrl = new UnitControl();
             ArrayList units =  unitCtrl.getUnitList();

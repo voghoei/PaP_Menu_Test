@@ -8,8 +8,10 @@
                 ${error}
         </div>
 </#if>
-
-    <div class="row">
+    <section id="register" class="">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        
 
             <table class="table table-striped table-hover">  <!-- table-bordered, table-hover table-condensed -->
             <thead>
@@ -48,8 +50,9 @@
             </tbody>
 
         </table>
-
+        </div>
         <a href="${baseContext}/beer" class="btn btn-primary custom-width">New Beer</a>
 
     </div>
+    </section>
 </@default.mainLayout>
