@@ -24,7 +24,7 @@
 	 <div class="col-sm-6 col-sm-offset-3">
             <div class="form-box">
                 <form role="form" action="beer" method="post">
-                
+                    <h2 class="text-center">Add Beer</h2>
                     <div class="form-group">
                             <label for="code">Code</label>                           
                             <input type="text" class="form-control" placeholder="Code" name="code">

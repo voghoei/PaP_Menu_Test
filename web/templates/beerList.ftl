@@ -1,6 +1,5 @@
 <#import "default.ftl" as default>
 <@default.mainLayout "Register">
-<h1>List of Beers</h1>
 <#if error??>
         <div class="col-md-12 alert alert-danger" role="alert">
                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -9,11 +8,13 @@
         </div>
 </#if>
     <section id="register" class="">
+    <h2 class="text-center">List of Beers</h2>
+
     <div class="panel panel-default">
         <!-- Default panel contents -->
         
 
-            <table class="table table-striped table-hover">  <!-- table-bordered, table-hover table-condensed -->
+        <table class="table table-striped table-hover">  <!-- table-bordered, table-hover table-condensed -->
             <thead>
               <tr>
                 <th>Id</th>

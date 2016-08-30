@@ -1,6 +1,6 @@
 <#import "default.ftl" as default>
 <@default.mainLayout "PaP">
-<h1>List of Units</h1>
+
 <#if error??>
         <div class="col-md-12 alert alert-danger" role="alert">
                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -9,6 +9,8 @@
         </div>
 </#if>
     <section id="register" class="">
+    <h2 class="text-center">List of Units</h2>
+
     <div class="panel panel-default">
         <!-- Default panel contents -->
 

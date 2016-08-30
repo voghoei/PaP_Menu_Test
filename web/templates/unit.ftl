@@ -25,7 +25,7 @@
 	 <div class="col-sm-6 col-sm-offset-3">
             <div class="form-box">
                 <form role="form" action="unit" method="post">
-
+                        <h2 class="text-center">Add Unit</h2>
                         <div class="form-group">
                                 <label for="name">Code</label>                           
                                 <input type="text" class="form-control" placeholder="Code" name="code">
