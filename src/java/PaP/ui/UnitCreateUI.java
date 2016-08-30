@@ -2,8 +2,10 @@
 package PaP.ui;
 
 import PaP.PaPException;
+import PaP.control.LoginControl;
 import PaP.control.RegisterControl;
 import PaP.control.UnitControl;
+import PaP.model.RegisteredUser;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,23 +17,21 @@ import javax.servlet.http.HttpSession;
 
 public class UnitCreateUI extends HttpServlet{
 
-	private boolean isNumeric(String str)  
-	{  
-	  try  
-	  {  
-	    double d = Double.parseDouble(str);  
-	  }  
-	  catch(NumberFormatException nfe)  
-	  {  
-	    return false;  
-	  }  
-	  return true;  
-	}
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 		HttpSession session = request.getSession(true);
-		request.setAttribute("baseContext", session.getServletContext().getContextPath());
-		RegisterControl ctrl = new RegisterControl();
+            request.setAttribute("baseContext", session.getServletContext().getContextPath());
+            String error = "Error unknown";
+            LoginControl ctrl = new LoginControl();
+            if(!ctrl.checkIsLoggedIn(session)){
+                    response.sendRedirect(session.getServletContext().getContextPath()+"/login");
+                    request.setAttribute("loggedInUser","");
+                    request.removeAttribute("loggedInUser");
+                    return;
+            }else{
+                    RegisteredUser currentUser = (RegisteredUser)session.getAttribute("currentSessionUser");
+                    request.setAttribute("loggedInUser",currentUser);
+            }
 		request.getRequestDispatcher("/unit.ftl").forward(request,response);
 	}
 
@@ -44,13 +44,9 @@ public class UnitCreateUI extends HttpServlet{
 		String desc = request.getParameter("description");
                 
 		UnitControl ctrl = new UnitControl();		
-		
-//                request.setAttribute("error","Phone number should be 10 digits. (i.e. 5551234567)");
-//                request.getRequestDispatcher("/unit.ftl").forward(request,response);
-	
+
             try {
                 if(ctrl.attemptToRegister(title,code,desc)){
-//                    response.sendRedirect("/unitList.ftl");
                     response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/unitList") );
                 }else{
                     request.setAttribute("error","Registration failed: "+ctrl.getError());

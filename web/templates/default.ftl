@@ -37,9 +37,16 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-			        <li><a href="${baseContext}/unitList">Unit</a></li>
-			        <li><a href="${baseContext}/menu">Menu</a></li>
+                                <#if loggedInUser??>
+                                    <li><a href="${baseContext}/unitList">Unit</a></li>
+                                    <li><a href="${baseContext}/beer">Beer</a></li>
+                                    <li><a href="${baseContext}/unit">Unit</a></li>
+                                    <li><a href="${baseContext}/menu">Menu</a></li>
+                                <#else>
+                                    <li><a href="${baseContext}/"></a></li>
+			        </#if>
 			      </ul>
+
 			      <ul class="nav navbar-nav navbar-right">
 			        <#if loggedInUser??>
 			        <li class="dropdown">

@@ -67,8 +67,8 @@ public class LoginUI extends HttpServlet {
         String password = request.getParameter("password");
 
         if (ctrl.attemptLogin(username, password, session)) {
-//            response.sendRedirect("/");
-                response.sendRedirect(response.encodeRedirectURL(contextPath + "/unit") );
+            //response.sendRedirect("/");
+               response.sendRedirect(response.encodeRedirectURL(contextPath + "/") );
         } else {
             if(ctrl.hasError()) {
                 request.setAttribute("error", ctrl.getError());

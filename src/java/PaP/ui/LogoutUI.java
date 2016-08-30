@@ -22,7 +22,7 @@ public class LogoutUI extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        String contextPath = request.getContextPath();
         // Get current session
         HttpSession session = request.getSession(true);
         request.setAttribute("baseContext", session.getServletContext().getContextPath());
@@ -30,7 +30,7 @@ public class LogoutUI extends HttpServlet {
             session.removeAttribute("currentSessionUser");
         }
         // Already logged in, redirect.
-        response.sendRedirect("/");
+        response.sendRedirect(response.encodeRedirectURL(contextPath + "/") );
     }
 
     @Override

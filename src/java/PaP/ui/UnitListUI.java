@@ -5,8 +5,10 @@
  */
 package PaP.ui;
 
+import PaP.control.LoginControl;
 import PaP.control.RegisterControl;
 import PaP.control.UnitControl;
+import PaP.model.RegisteredUser;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
@@ -25,7 +27,17 @@ public class UnitListUI extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
             HttpSession session = request.getSession(true);
             request.setAttribute("baseContext", session.getServletContext().getContextPath());
-
+            String error = "Error unknown";
+            LoginControl ctrl = new LoginControl();
+            if(!ctrl.checkIsLoggedIn(session)){
+                    response.sendRedirect(session.getServletContext().getContextPath()+"/login");
+                    request.setAttribute("loggedInUser","");
+                    request.removeAttribute("loggedInUser");
+                    return;
+            }else{
+                    RegisteredUser currentUser = (RegisteredUser)session.getAttribute("currentSessionUser");
+                    request.setAttribute("loggedInUser",currentUser);
+            }
             UnitControl unitCtrl = new UnitControl();
             ArrayList units =  unitCtrl.getUnitList();
             request.setAttribute("units", units);
@@ -35,4 +47,9 @@ public class UnitListUI extends HttpServlet{
 
     }
     
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
+    }    
 }

@@ -1,12 +1,23 @@
 <#import "default.ftl" as default>
-<@default.mainLayout "Register">
-<h1>Register Unit</h1>
+<@default.mainLayout "Login">
+<h1>Login to Plug and Pure</h1>
 <#if error??>
-        <div class="col-md-12 alert alert-danger" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                <span class="sr-only"> Error: </span>
-                ${error}
-        </div>
+<div class="row">
+	<div class="col-md-12 alert alert-danger" role="alert">
+		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		<span class="sr-only">Error:</span>
+		${error}
+	</div>
+</div>
+</#if>
+<#if message??>
+<div class="row">
+	<div class="col-md-12 alert alert-success" role="alert">
+		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		<span class="sr-only">Message:</span>
+		${message}
+	</div>
+</div>
 </#if>
 
 <div class="row">
