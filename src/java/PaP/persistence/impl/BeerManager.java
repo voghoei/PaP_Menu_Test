@@ -25,8 +25,8 @@ public class BeerManager {
     }
 
     public void save(Beer beer) throws PaPException {
-        String insertBeerSQL = "INSERT INTO beer (code, name, brand, type, abv, ibu, description) VALUES (?, ?, ?, ?,?,?,?)";
-        String updateBeerSQL = "UPDATE beer SET code=?,name=?,brand=?,type=?,abv=?,ibu=?,description=? WHERE id = ?";
+        String insertBeerSQL = "INSERT INTO beer (code, name, brand, type, abv, ibu, description,logo) VALUES (?, ?, ?, ?,?,?,?,?)";
+        String updateBeerSQL = "UPDATE beer SET code=?,name=?,brand=?,type=?,abv=?,ibu=?,description=?,logo=LOAD_FILE(?) WHERE id = ?";
         PreparedStatement stmt = null;
         ResultSet rs = null;
         int inscnt;
@@ -82,8 +82,14 @@ public class BeerManager {
                 throw new PaPException("Beer.save: can't save a Beer: beer undefined");
             }  
             
+            if (beer.getLogo() != null) {
+                stmt.setBlob(8, beer.getLogo());
+            } else {
+                throw new PaPException("Beer.save: can't save a Beer: beer undefined");
+            }
+            
             if (beer.isPersistent()) {
-                stmt.setLong(8, beer.getId());
+                stmt.setLong(9, beer.getId());
             }
             inscnt = stmt.executeUpdate();
             
@@ -123,7 +129,7 @@ public class BeerManager {
 
     public Iterator<Beer> restore(Beer beer)
             throws PaPException {
-        String selectBeerSql = "select id,code,name,brand,type,abv,ibu,description from beer";
+        String selectBeerSql = "select id,code,name,brand,type,abv,ibu,description,logo from beer";
         Statement stmt = null;
         StringBuffer query = new StringBuffer(100);
         StringBuffer condition = new StringBuffer(100);

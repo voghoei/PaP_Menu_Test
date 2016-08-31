@@ -1,6 +1,7 @@
 package PaP.model.impl;
 
 import PaP.model.*;
+import java.sql.Blob;
 import java.util.Objects;
 
 
@@ -13,12 +14,13 @@ public class BeerImpl extends Persistent implements Beer {
     private double abv=0;
     private int ibu=0;
     private String desc;
+    private Blob logo;
     
 
     public BeerImpl(){
     }
 
-    public BeerImpl(String code, String name, String brand, String type, double abv, int ibu, String desc) {
+    public BeerImpl(String code, String name, String brand, String type, double abv, int ibu, String desc, Blob logo) {
         this.code = code;
         this.name = name;
         this.brand = brand;
@@ -26,6 +28,15 @@ public class BeerImpl extends Persistent implements Beer {
         this.abv = abv;
         this.ibu = ibu;
         this.desc = desc;
+        this.logo=logo;
+    }
+
+    public Blob getLogo() {
+        return logo;
+    }
+
+    public void setLogo(Blob logo) {
+        this.logo = logo;
     }
     
     

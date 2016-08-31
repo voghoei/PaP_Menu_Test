@@ -13,6 +13,9 @@ import java.sql.Connection;
 import java.util.Date;
 import PaP.model.Menu;
 import PaP.model.Menu;
+import java.io.File;
+import java.io.FileInputStream;
+
 
 /**
  *
@@ -66,23 +69,30 @@ public class Insert {
             objectModel.storeUnit(unit);
             System.out.println("Entity objects unit created and saved.");
 
-            //Beer
-            badwiser = objectModel.createBeer("Code1","badwiser","BW","t1",10.3,2,"desc");
-            objectModel.storeBeer(badwiser);
-            System.out.println("Entity objects badwiser created and saved.");
-            
-            corola = objectModel.createBeer("Code2","corola","cr","t2",7.23,4,"desc");
-            objectModel.storeBeer(badwiser);
-            System.out.println("Entity objects corola created and saved.");
-            
-            light = objectModel.createBeer("Code3","light","sl","t3",5,1,"desc");
-            objectModel.storeBeer(light);
-            System.out.println("Entity objects light created and saved.");
-           
-            //Menu
-            menu = objectModel.createMenu(unit, badwiser);
-            objectModel.storeMenu(menu);
-            System.out.println("Entity objects Menu created and saved.");
+//            //Beer
+//            File file= new File("C:\\Users\\Sahar\\Downloads\\demo(1)\\demo_v01\\demo_v01\\images\\beer2.png");
+//            FileInputStream inputStream= new FileInputStream(file);
+//            OutputBlob blobOutput = new OutputBlob(inputStream, file.length());
+//            
+//            badwiser = objectModel.createBeer("Code1","badwiser","BW","t1",10.3,2,"desc",inputStream);
+//            objectModel.storeBeer(badwiser);
+//            System.out.println("Entity objects badwiser created and saved.");
+//            
+//            File file2= new File("C:\\Users\\Sahar\\Downloads\\demo(1)\\demo_v01\\demo_v01\\images\\beer1.png");
+//            FileInputStream inputStream2= new FileInputStream(file2);
+//            
+//            corola = objectModel.createBeer("Code2","corola","cr","t2",7.23,4,"desc");
+//            objectModel.storeBeer(badwiser);
+//            System.out.println("Entity objects corola created and saved.");
+//            
+//            light = objectModel.createBeer("Code3","light","sl","t3",5,1,"desc");
+//            objectModel.storeBeer(light);
+//            System.out.println("Entity objects light created and saved.");
+//           
+//            //Menu
+//            menu = objectModel.createMenu(unit, badwiser);
+//            objectModel.storeMenu(menu);
+//            System.out.println("Entity objects Menu created and saved.");
             
 
         } catch (PaPException ce) {

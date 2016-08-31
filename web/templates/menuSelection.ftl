@@ -47,7 +47,8 @@
                                     <td data-th="Brand">${beer.brand}</td>
                                     <td data-th="">
                                     <label>
-                                        <input class="cb-beers"  name="beerId" value="${beer.id}" type="checkbox">
+                                        
+                                        <input class="cb-beers"  name="beerId" value="${beer.id}" type="checkbox"  >
                                     </label>
                                     </td>
                                 

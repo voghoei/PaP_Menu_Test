@@ -1,5 +1,7 @@
 package PaP.model;
 
+import java.sql.Blob;
+
 public interface Beer extends Persistable {
 
     public String getCode();
@@ -29,5 +31,9 @@ public interface Beer extends Persistable {
     public String getType();
 
     public void setType(String type);
+    
+    public Blob getLogo();
+
+    public void setLogo(Blob logo);
 
 }

@@ -2,6 +2,7 @@ package PaP.model;
 
 import PaP.PaPException;
 import PaP.persistence.Persistence;
+import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -25,7 +26,7 @@ public interface ObjectModel {
 
     
     //Beer
-    public Beer createBeer(String code, String name, String brand, String type, double abv, int ibu, String desc) throws PaPException;
+    public Beer createBeer(String code, String name, String brand, String type, double abv, int ibu, String desc,Blob logo) throws PaPException;
 
     public Beer createBeer();
 

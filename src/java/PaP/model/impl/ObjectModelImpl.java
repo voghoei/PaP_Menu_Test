@@ -6,8 +6,8 @@ import PaP.PaPException;
 import PaP.model.ObjectModel;
 import PaP.persistence.Persistence;
 import PaP.model.*;
+import java.sql.Blob;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 
 
 public class ObjectModelImpl extends Persistent implements ObjectModel {
@@ -28,8 +28,8 @@ public class ObjectModelImpl extends Persistent implements ObjectModel {
 
     
     //Beer
-    public Beer createBeer(String code, String name, String brand, String type, double abv, int ibu, String desc) {
-        Beer newBeer = new BeerImpl(code, name, brand, type, abv, ibu, desc);
+    public Beer createBeer(String code, String name, String brand, String type, double abv, int ibu, String desc,Blob logo) {
+        Beer newBeer = new BeerImpl(code, name, brand, type, abv, ibu, desc,logo);
         return newBeer;
     }
 
