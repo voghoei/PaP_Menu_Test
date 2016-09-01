@@ -25,7 +25,7 @@
 		Need to register? <a href="register">Click here!</a>
 	</div>
 </div>-->
-<div class="row">
+<div class="row" >
     <section id="register" class="">
 	                    
 	 <div class="col-sm-6 col-sm-offset-3">

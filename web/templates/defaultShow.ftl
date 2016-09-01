@@ -27,11 +27,11 @@
     </head>
     <body>
     
-        <div class="container-fluid" id="main-container">
+        <div class="container-fluid" id="main-container" >
             <div class="row" id="main-row">
                 <header>
                     <nav id="main-nav-bar" class="navbar-default">
-                        <div class="container">
+                        <div class="container" >
 
                             <div class="navbar-header">
                                 <a class="navbar-brand hidden-xs hidden-sm" href="${baseContext}/index"><img alt="" src="${baseContext}/resources/images/logo-1x.png" srcset="${baseContext}/resources/images/logo-1x.png 1x, ${baseContext}/resources/images/logo-2x.png 2x"></a>
@@ -48,7 +48,8 @@
                     </nav>
                 </header>
                 <div id="product-gallery">
-                    <div class="container">
+                    <div class="container" >
+                        
                         <#nested/>
                     </div>
                 </div>

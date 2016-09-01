@@ -71,11 +71,12 @@ public class BeerEditUI extends HttpServlet{
                 double abv = Double.parseDouble(request.getParameter("ABV"));
                 int ibu = Integer.parseInt(request.getParameter("IBU"));
 		String desc = request.getParameter("description");
+                String logoPath = request.getParameter("logoPath");
                 
 		BeerControl ctrl = new BeerControl();		
                 
             try {
-                if(ctrl.updateBeer(id, code, name, brand, type, abv, ibu, desc)){
+                if(ctrl.updateBeer(id, code, name, brand, type, abv, ibu, desc,logoPath)){
 //                    response.sendRedirect("/beerList.ftl");
                     response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/beerList") );
                 }else{

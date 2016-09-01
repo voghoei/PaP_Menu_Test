@@ -7,45 +7,47 @@
                 ${error}
         </div>
 </#if>
-    <section id="register" class="">
-    <h2 class="text-center">List of Beers</h2>
 
-    <div class="panel panel-default">
+<section id="register" class="">
+   <div class="panel panel-default">
+        
+        <font size="5"><b>List of Beers</b></font>
+        
+  </div>
+
+    <div class="panel panel-default" >
         <!-- Default panel contents -->
         
-
         <table class="table table-striped table-hover">  <!-- table-bordered, table-hover table-condensed -->
             <thead>
               <tr>
-                <th>Id</th>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Brand</th>
-                <th>Style</th>
-                <th>ABV</th>
-                <th>IBU</th>
-
+                
+                <th class="text-center">Logo</th>
+                <th class="text-center">Name</th>
+                <th class="text-center">Brewery</th>
+                <th class="text-center">Style</th>
+                <th class="text-center">ABV</th>
+                <th class="text-center">IBU</th>
+            
                 <th></th>
-                <th></th>
+                
               </tr>
             </thead>
             <tbody>
             <#list beers as beer>
                 <tr>
-                    <td>${beer.id}</td>
-                    <td>${beer.code}</td>
-                    <td>${beer.name}</td>
-                    <td>${beer.brand}</td>
-                    <td>${beer.type}</td>
-                    <td>${beer.ABV}</td>
-                    <td>${beer.IBU}</td>
-
+                    <td class="text-center"> 
+                        <img class="pull-center product-thumb" src="${baseContext}/resources/images/${beer.logo}" alt="" width="40" height="60">
+                    </td>
+                    <td class="text-center">${beer.name}</td>
+                    <td class="text-center">${beer.brand}</td>
+                    <td class="text-center">${beer.type}</td>
+                    <td class="text-center">${beer.ABV}</td>
+                    <td class="text-center">${beer.IBU}</td>
                     <td>
                         <a href="${baseContext}/beerEdit?id=${beer.id}" class="btn btn-success custom-width">edit</a>
                     </td>
-                    <td>
-                        <a href="${baseContext}/beerDelete?id=${beer.id}" class="btn btn-danger custom-width">delete</a>
-                    </td>
+                    
                 </tr>
             </#list>
             </tbody>

@@ -14,13 +14,13 @@ public class BeerImpl extends Persistent implements Beer {
     private double abv=0;
     private int ibu=0;
     private String desc;
-    private Blob logo;
+    private String logo;
     
 
     public BeerImpl(){
     }
 
-    public BeerImpl(String code, String name, String brand, String type, double abv, int ibu, String desc, Blob logo) {
+    public BeerImpl(String code, String name, String brand, String type, double abv, int ibu, String desc, String logo) {
         this.code = code;
         this.name = name;
         this.brand = brand;
@@ -31,11 +31,11 @@ public class BeerImpl extends Persistent implements Beer {
         this.logo=logo;
     }
 
-    public Blob getLogo() {
+    public String getLogo() {
         return logo;
     }
 
-    public void setLogo(Blob logo) {
+    public void setLogo(String logo) {
         this.logo = logo;
     }
     

@@ -28,8 +28,8 @@ public class ObjectModelImpl extends Persistent implements ObjectModel {
 
     
     //Beer
-    public Beer createBeer(String code, String name, String brand, String type, double abv, int ibu, String desc,Blob logo) {
-        Beer newBeer = new BeerImpl(code, name, brand, type, abv, ibu, desc,logo);
+    public Beer createBeer(String code, String name, String brand, String type, double abv, int ibu, String desc,String logoPath) {
+        Beer newBeer = new BeerImpl(code, name, brand, type, abv, ibu, desc,logoPath);
         return newBeer;
     }
 

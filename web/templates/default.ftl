@@ -108,7 +108,7 @@
 
                     </div>
                 </footer>
-                -->
+                
                 <footer class="credits">
                     <div class="container">
                         <div class="row">
@@ -124,6 +124,7 @@
                         </div>
                     </div>
                 </footer> 
+                -->
 		</div>
             <!-- /#main-row -->
         </div>

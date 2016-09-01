@@ -40,7 +40,7 @@ public class BeerIterator implements Iterator<Beer> {
         double ABV;
         int IBU;
         String Desc;
-        Blob logo;
+        String logo;
         Beer beer = null;
         if (more) {
             try {
@@ -52,7 +52,7 @@ public class BeerIterator implements Iterator<Beer> {
                 ABV = rs.getDouble(6);
                 IBU = rs.getInt(7);
                 Desc = rs.getString(8);
-                logo = rs.getBlob(9);
+                logo = rs.getString(9);
                 more = rs.next();     
                 beer = objectModel.createBeer(Code,Name,Brand,Type,ABV,IBU,Desc,logo);
                 beer.setId(id);

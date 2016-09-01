@@ -26,7 +26,7 @@ public class BeerManager {
 
     public void save(Beer beer) throws PaPException {
         String insertBeerSQL = "INSERT INTO beer (code, name, brand, type, abv, ibu, description,logo) VALUES (?, ?, ?, ?,?,?,?,?)";
-        String updateBeerSQL = "UPDATE beer SET code=?,name=?,brand=?,type=?,abv=?,ibu=?,description=?,logo=LOAD_FILE(?) WHERE id = ?";
+        String updateBeerSQL = "UPDATE beer SET code=?,name=?,brand=?,type=?,abv=?,ibu=?,description=?,logo=? WHERE id = ?";
         PreparedStatement stmt = null;
         ResultSet rs = null;
         int inscnt;
@@ -83,7 +83,7 @@ public class BeerManager {
             }  
             
             if (beer.getLogo() != null) {
-                stmt.setBlob(8, beer.getLogo());
+                stmt.setString(8, beer.getLogo());
             } else {
                 throw new PaPException("Beer.save: can't save a Beer: beer undefined");
             }

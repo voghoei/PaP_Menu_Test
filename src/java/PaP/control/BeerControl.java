@@ -34,7 +34,7 @@ public class BeerControl{
 		}
 	}
 
-	public boolean attemptToRegister(String code, String name,String brand,String type,double abv,int ibu, String desc)throws PaPException{
+	public boolean attemptToRegister(String code, String name,String brand,String type,double abv,int ibu, String desc, String logoPath)throws PaPException{
 		try{
 		connect();
 		Beer modelBeer = objectModel.createBeer();
@@ -46,6 +46,7 @@ public class BeerControl{
                 modelBeer.setABV(abv);
                 modelBeer.setIBU(ibu);
 		modelBeer.setDesc(desc);
+                modelBeer.setLogo(logoPath);
 		
 		
 		objectModel.storeBeer(modelBeer);			
@@ -109,7 +110,7 @@ public class BeerControl{
 
 	}
         
-        public boolean updateBeer(Long id, String code, String name,String brand,String type,double abv,int ibu, String desc)throws PaPException{
+        public boolean updateBeer(Long id, String code, String name,String brand,String type,double abv,int ibu, String desc,String logoPath)throws PaPException{
 		try{
 		connect();
 		Beer modelBeer = objectModel.createBeer();
@@ -120,7 +121,8 @@ public class BeerControl{
                 modelBeer.setType(type);
                 modelBeer.setABV(abv);
                 modelBeer.setIBU(ibu);
-		modelBeer.setDesc(desc);                                    		
+		modelBeer.setDesc(desc);  
+                modelBeer.setLogo(logoPath);
 		
 		objectModel.storeBeer(modelBeer);			
 		}catch(PaPException e){

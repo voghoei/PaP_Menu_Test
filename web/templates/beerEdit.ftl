@@ -21,6 +21,12 @@
                     <h2 class="text-center">Edit Beer</h2>
                     <input type="hidden" name="id" value="${beer.id}" />
                     <div class="form-group">
+                            <label for="logoPath">Logo</label>                           
+                            <input type="file" class="" placeholder="logoPath" name="logoPath" value="${beer.logo}">
+                            <img class="img-responsive" src="${baseContext}/resources/images/${beer.logo}" alt="" width="50" height="100">
+                    </div> 
+
+                    <div class="form-group">
                             <label for="name">Code</label>                           
                             <input type="text" class="form-control input-sm" placeholder="Code" name="code" value="${beer.code}">
                     </div>                               
@@ -31,7 +37,7 @@
                     </div>
 
                     <div class="form-group">
-                            <label for="brand">Brand</label>
+                            <label for="brand">Brewery</label>
                                 <input type="text" class="form-control input-sm" placeholder="brand" name="brand" value="${beer.brand}">
                     </div>
 

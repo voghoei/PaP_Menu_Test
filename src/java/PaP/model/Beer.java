@@ -32,8 +32,8 @@ public interface Beer extends Persistable {
 
     public void setType(String type);
     
-    public Blob getLogo();
+    public String getLogo();
 
-    public void setLogo(Blob logo);
+    public void setLogo(String logo);
 
 }

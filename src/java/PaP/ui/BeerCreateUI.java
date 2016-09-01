@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 public class BeerCreateUI extends HttpServlet{
 
@@ -44,16 +45,17 @@ public class BeerCreateUI extends HttpServlet{
                 double abv = Double.parseDouble(request.getParameter("ABV"));
                 int ibu = Integer.parseInt(request.getParameter("IBU"));
 		String desc = request.getParameter("description");
+                String logoPath = request.getParameter("logoPath");            
                 
 		BeerControl ctrl = new BeerControl();		
 
             try {
                 
-                if(ctrl.attemptToRegister(code, name, brand, type, abv, ibu, desc)){
+                if(ctrl.attemptToRegister(code, name, brand, type, abv, ibu, desc,logoPath)){
                     response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/beerList") );
                 }else{
                    // request.setAttribute("error","Registration failed: "+ctrl.getError());
-                   request.setAttribute("error","Registration failed: "+code+", "+name+", "+brand+", "+type+", "+abv+", "+ibu+", "+desc);
+                    request.setAttribute("error","Registration failed: "+code+", "+name+", "+brand+", "+type+", "+abv+", "+ibu+", "+desc+", "+logoPath);
                     request.getRequestDispatcher("/beer.ftl").forward(request,response);
                 }
             } catch (PaPException ex) {

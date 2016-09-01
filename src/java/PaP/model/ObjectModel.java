@@ -26,7 +26,7 @@ public interface ObjectModel {
 
     
     //Beer
-    public Beer createBeer(String code, String name, String brand, String type, double abv, int ibu, String desc,Blob logo) throws PaPException;
+    public Beer createBeer(String code, String name, String brand, String type, double abv, int ibu, String desc,String logoPath) throws PaPException;
 
     public Beer createBeer();
 

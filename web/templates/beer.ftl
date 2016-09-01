@@ -25,6 +25,14 @@
             <div class="form-box">
                 <form role="form" action="beer" method="post">
                     <h2 class="text-center">Add Beer</h2>
+
+                    <div class="form-group">
+                            <label for="logoPath">Logo</label>                           
+                            <input type="file" class="" placeholder="logoPath" name="logoPath">
+                            <img class="img-responsive" width="200" height="400" alt="" id="preview">
+                            <img id="preview">
+                    </div> 
+
                     <div class="form-group">
                             <label for="code">Code</label>                           
                             <input type="text" class="form-control" placeholder="Code" name="code">
@@ -36,7 +44,7 @@
                     </div> 
 
                     <div class="form-group">
-                            <label for="brand">Brand</label>
+                            <label for="brand">Brewery</label>
                                 <input type="text" class="form-control" placeholder="Brand" name="brand">
                     </div>
 
@@ -66,6 +74,7 @@
                     </div>
 
                 </form>
+                    <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
             </div>
         </div>
     </section>
